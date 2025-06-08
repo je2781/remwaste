@@ -51,7 +51,7 @@ export default function HomeComponent() {
       ) : (
         <main
           role="main"
-          className="min-h-screen font-impact w-full mx-auto container space-y-12 flex flex-col items-center pb-7 md:pt-14 pt-3 px-4 lg:px-3"
+          className="min-h-screen font-impact w-full mx-auto container space-y-12 flex flex-col items-center pb-7 md:pt-14 pt-3 px-5 lg:px-3"
         >
           <header className="space-y-3 flex w-full flex-col items-center">
             <h1 className="md:text-3xl text-2xl text-orange-600">
@@ -61,7 +61,7 @@ export default function HomeComponent() {
               Select the skip size that best suits your needs
             </h3>
           </header>
-          <section className="flex flex-wrap md:gap-10 gap-6">
+          <section className="flex flex-wrap md:gap-10 gap-6 items-center">
             {skipData.map((skip: any, i: number) => (
               <Card key={i} skip={skip} handleSelect={chooseSelected}>
                 <div>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
+import useWindowWidth from "../utils/getWindowWidth";
 
 type CardProps = {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ type CardProps = {
 };
 
 export default function Card({ children, skip, handleSelect}: CardProps) {
-
+  const width = useWindowWidth();
 
   return (
     <div onClick={(e) => handleSelect(e, skip.id)} className={`rounded-lg shadow-md space-y-4 border ${skip.selected ? 'border-orange-600' : 'border-gray-200'} hover:border-orange-600 p-6 cursor-pointer relative`}>
@@ -23,7 +24,7 @@ export default function Card({ children, skip, handleSelect}: CardProps) {
       <div className="group relative overflow-hidden rounded-lg shadow-xl">
         <Image
           src="/5-yarder-skip.jpg"
-          width={340}
+          width={width >= 768 ? 340 : 400}
           height={45}
           alt="skip"
           className="object-cover transform transition-transform duration-500 group-hover:scale-125"
