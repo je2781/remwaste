@@ -51,7 +51,7 @@ export default function HomeComponent() {
       ) : (
         <main
           role="main"
-          className="min-h-screen font-impact w-full mx-auto container space-y-12 flex flex-col pb-7 md:pt-14 pt-3 px-4 lg:pl-0 lg:pr-6"
+          className="min-h-screen font-impact w-full mx-auto container space-y-12 flex flex-col items-center pb-7 md:pt-14 pt-3 px-4 lg:px-3"
         >
           <header className="space-y-3 flex w-full flex-col items-center">
             <h1 className="md:text-3xl text-2xl text-orange-600">
