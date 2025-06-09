@@ -10,7 +10,7 @@ export default function Header() {
   let timerId: NodeJS.Timeout | null = null;
 
   const windowWidth = useWindowWidth();
-  const path = usePathname();
+//   const path = usePathname();
   const [prevScrollPos, setPrevScrollPos] = React.useState(0);
   const [visible, setVisible] = React.useState(true);
   const [isMobileModalOpen, setIsMobileModalOpen] = React.useState(false);
@@ -48,10 +48,12 @@ export default function Header() {
     },
   ];
 
+  //getting active page
   const currentIndex = navItems.findIndex(
     (item) => item.href === "/select-skip"
   );
 
+  //handling scrolling
   React.useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
@@ -68,6 +70,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos, visible, setIsMobileModalOpen]);
 
+  //clearing timeouts
   React.useEffect(() => {
     return () => {
       if (timerId) {
@@ -76,25 +79,21 @@ export default function Header() {
     };
   }, [timerId]);
 
-  // Handling scroll
+  // Handling  mobile navbar slide effect
 
   React.useEffect(() => {
     let mobileNav = document.querySelector("#mobile-nav") as HTMLElement;
     if (isMobileModalOpen && mobileNav) {
-      mobileNav.classList.remove("-translate-x-full");
-      mobileNav.classList.add("translate-x-0");
+      mobileNav.classList.add("forward");
+      mobileNav.classList.remove("backward");
     }
   }, [isMobileModalOpen]);
-
-  const showModalHandler = (e: React.MouseEvent) => {
-    setIsMobileModalOpen(true);
-  };
 
   const hideModalHandler = () => {
     let mobileNav = document.querySelector("#mobile-nav") as HTMLElement;
     if (mobileNav) {
-      mobileNav.classList.remove("translate-x-0");
-      mobileNav.classList.add("-translate-x-full");
+      mobileNav.classList.remove("forward");
+      mobileNav.classList.add("backward");
       timerId = setTimeout(() => {
         setIsMobileModalOpen(false);
       }, 300);
@@ -103,7 +102,8 @@ export default function Header() {
     }
   };
 
-  //closing modal fowhen windoow width changes
+
+  //closing modal when windoow width changes
   React.useEffect(() => {
     setIsMobileModalOpen(false);
   }, [setIsMobileModalOpen, windowWidth]);
@@ -129,7 +129,7 @@ export default function Header() {
             className="hover:bg-[#10131c]/10 focus:bg-[#10131c]/10 bg-transparent rounded-md lg:hidden inline-block"
             aria-haspopup="true"
             aria-expanded="false"
-            onClick={showModalHandler}
+            onClick={(e) => setIsMobileModalOpen(true)}
           >
             <i className="fa-solid fa-bars text-[#10131c] text-lg"></i>
             <span className="sr-only">Open dashboard mobile navbar</span>
@@ -164,8 +164,8 @@ export default function Header() {
                     <div className="h-px xl:w-10 lg:w-6 bg-gray-300" />
                   )}
                   <Link
-                    href={item.href}
-                    className="flex flex-row items-center gap-2"
+                    href={i > currentIndex ? '#': item.href}
+                    className={`flex flex-row items-center gap-2 ${i > currentIndex ? 'cursor-not-allowed': 'cursor-pointer'}`}
                     aria-current={isActive ? "page" : undefined}
                   >
                     {icon}

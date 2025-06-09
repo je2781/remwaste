@@ -7,7 +7,7 @@ const BackDrop = (props: any) => {
 
 const MobileModalOverlay = (props: any) => {
   return (
-    <main id='mobile-nav' aria-orientation="vertical" className={`px-6 pt-24 bg-white z-[45] w-4/5 flex-col pb-12 transform transition-transform ease-linear duration-300 -translate-x-full gap-y-6 h-full flex fixed top-0 left-0`}>
+    <main id='mobile-nav' aria-orientation="vertical" className={`px-6 pt-24 bg-white z-[45] w-4/5 flex-col pb-12 gap-y-6 h-full flex fixed top-0 left-0`}>
       {props.children}
       <i className="fa-solid fa-xmark text-xl absolute right-4 top-5 cursor-pointer text-gray-500" onClick={props.onClick}></i>
     </main>
