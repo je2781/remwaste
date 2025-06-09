@@ -29,6 +29,20 @@ const config: Config = {
       fontFamily: {
         impact: ['Impact', 'sans-serif'],
       },
+      keyframes: {
+        forward: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        backward: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        forward: 'forward 0.3s linear forwards',
+        backward: 'backward 0.3s linear forwards',
+      },
     },
   },
   plugins: [],

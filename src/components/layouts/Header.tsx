@@ -85,16 +85,16 @@ export default function Header() {
   React.useEffect(() => {
     let mobileNav = document.querySelector("#mobile-nav") as HTMLElement;
     if (isMobileModalOpen && mobileNav) {
-      mobileNav.classList.add("forward");
-      mobileNav.classList.remove("backward");
+      mobileNav.classList.add("animate-forward");
+      mobileNav.classList.remove("animate-backward");
     }
   }, [isMobileModalOpen]);
 
   const hideModalHandler = () => {
     let mobileNav = document.querySelector("#mobile-nav") as HTMLElement;
     if (mobileNav) {
-      mobileNav.classList.remove("forward");
-      mobileNav.classList.add("backward");
+      mobileNav.classList.remove("animate-forward");
+      mobileNav.classList.add("animate-backward");
       timerId = setTimeout(() => {
         setIsMobileModalOpen(false);
       }, 300);
