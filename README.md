@@ -14,7 +14,7 @@ I started with consuming the api using useEffect, then moved onto layout, UX des
 
 ## How to run the app
 
-Run (npm run start:dev) from the main directory to compile for development. 
+Run (npm run dev) from the main directory to compile for development. 
 
 ## Sandbox link
 
