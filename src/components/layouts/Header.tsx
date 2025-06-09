@@ -111,7 +111,7 @@ export default function Header() {
   return (
     <>
       <nav
-        className={`bg-white shadow-sm z-20 fixed top-0 w-full h-[64px] font-impact py-4 ${
+        className={`bg-white shadow-sm z-20 fixed top-0 w-full h-[64px] font-impact py-5 ${
           windowWidth > 768
             ? "transition-transform duration-300 ease-in-out"
             : ""
