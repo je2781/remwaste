@@ -24,7 +24,7 @@ export default function Card({ children, skip, handleSelect}: CardProps) {
         </span>}
         <Image
           src="/5-yarder-skip.jpg"
-          width={width >= 768 ? 340 : 400}
+          width={width >= 1024 ? 340 : 290}
           height={45}
           alt="skip"
           className="object-cover transform transition-transform duration-500 group-hover:scale-125"
