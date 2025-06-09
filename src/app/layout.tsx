@@ -33,6 +33,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div id='backdrop-root'></div>
+        <div id='mobile-modal'></div>
         {children}
       </body>
     </html>

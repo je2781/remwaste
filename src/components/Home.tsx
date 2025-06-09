@@ -51,7 +51,7 @@ export default function HomeComponent() {
       ) : (
         <main
           role="main"
-          className="min-h-screen font-impact w-full mx-auto container space-y-12 flex flex-col items-center pb-7 md:pt-14 pt-3 px-5 lg:px-3"
+          className="min-h-screen font-impact w-full mx-auto container space-y-12 flex flex-col items-center pb-7 md:pt-28 pt-20 px-5 lg:px-3"
         >
           <header className="space-y-3 flex w-full flex-col items-center">
             <h1 className="md:text-3xl text-2xl text-orange-600">
@@ -61,7 +61,7 @@ export default function HomeComponent() {
               Select the skip size that best suits your needs
             </h3>
           </header>
-          <section className="flex flex-wrap md:gap-10 gap-6 items-center">
+          <section className="flex flex-wrap md:gap-10 gap-6 items-center justify-center">
             {skipData.map((skip: any, i: number) => (
               <Card key={i} skip={skip} handleSelect={chooseSelected}>
                 <div>
@@ -101,7 +101,7 @@ export default function HomeComponent() {
       )}
       <div
         id="progress-modal"
-        className="py-6 md:px-10 px-8 transform transition-transform ease-in-out duration-400 text-center space-y-8 bg-[#10131c] text-white translate-y-[100%] z-50 h-auto fixed bottom-0 left-0 w-full"
+        className="py-6 md:px-10 px-8 transform transition-transform ease-in-out duration-400 text-center space-y-8 bg-[#10131c] text-white translate-y-[100%] z-10 h-auto fixed bottom-0 left-0 w-full"
       >
         <p className="text-sm ">
           Imagery and information shown throughout this website may not reflect
