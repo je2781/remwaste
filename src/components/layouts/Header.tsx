@@ -5,6 +5,7 @@ import React from "react";
 import useWindowWidth from "../utils/getWindowWidth";
 import { MobileModal } from "./Modal";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   let timerId: NodeJS.Timeout | null = null;
@@ -123,7 +124,8 @@ export default function Header() {
             : ""
         }`}
       >
-        <div className="mx-auto container flex flex-row w-full items-center gap-0 px-5 lg:px-7 xl:px-3">
+        <div className={`mx-auto container flex flex-row w-full items-center gap-0 px-5 lg:px-7 xl:px-3 ${windowWidth >= 1028 ? '' : 'justify-between'}`}>
+          <Image src='/REMWaste.png' width={48} height={48} alt='logo' className="cursor-pointer rounded-md lg:hidden inline-block"/>
           <button
             id="toggle-button"
             className="hover:bg-[#10131c]/10 focus:bg-[#10131c]/10 bg-transparent cursor-pointer rounded-md lg:hidden inline-block"
