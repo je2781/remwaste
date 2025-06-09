@@ -126,7 +126,7 @@ export default function Header() {
         <div className="mx-auto container flex flex-row w-full items-center gap-0 px-5 lg:px-7 xl:px-3">
           <button
             id="toggle-button"
-            className="hover:bg-[#10131c]/10 focus:bg-[#10131c]/10 bg-transparent rounded-md lg:hidden inline-block"
+            className="hover:bg-[#10131c]/10 focus:bg-[#10131c]/10 bg-transparent cursor-pointer rounded-md lg:hidden inline-block"
             aria-haspopup="true"
             aria-expanded="false"
             onClick={(e) => setIsMobileModalOpen(true)}
