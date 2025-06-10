@@ -171,7 +171,7 @@ export default function Header() {
                     aria-current={isActive ? "page" : undefined}
                   >
                     {icon}
-                    <h1 className={`xl:text-lg text-sm ${i > currentIndex ? 'text-gray-400': 'text-gray-300'}`}>
+                    <h1 className={`xl:text-lg text-sm ${i > currentIndex ? 'text-gray-300': 'text-gray-400'}`}>
                       {item.name}
                     </h1>
                   </Link>
@@ -215,7 +215,7 @@ export default function Header() {
                     aria-current={isActive ? "page" : undefined}
                   >
                     {icon}
-                    <h1 className={`xl:text-lg text-sm ${i > currentIndex ? 'text-gray-400': 'text-gray-300'}`}>
+                    <h1 className={`xl:text-lg text-sm ${i > currentIndex ? 'text-gray-300': 'text-gray-400'}`}>
                       {item.name}
                     </h1>
                   </Link>
