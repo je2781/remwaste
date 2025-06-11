@@ -134,7 +134,7 @@ export default function Header() {
             onClick={(e) => setIsMobileModalOpen(true)}
           >
             <i className="fa-solid fa-bars text-[#10131c] text-lg"></i>
-            <span className="sr-only">Open dashboard mobile navbar</span>
+            <span className="sr-only">Open mobile navbar</span>
           </button>
           <ul className="lg:flex flex-row w-full items-center p-0 hidden">
             {navItems.map((item, i, items) => {
