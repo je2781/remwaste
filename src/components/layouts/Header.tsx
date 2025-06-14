@@ -112,7 +112,7 @@ export default function Header() {
   return (
     <>
       <nav
-        className={`bg-white shadow-sm z-20 fixed top-0 w-full h-[68px] font-impact py-5 ${
+        className={`bg-white z-20 fixed top-0 w-full h-[68px] font-impact py-5 ${
           windowWidth > 768
             ? "transition-transform duration-300 ease-in-out"
             : ""
@@ -120,7 +120,7 @@ export default function Header() {
           visible && windowWidth > 768
             ? "transform translate-y-0"
             : !visible && windowWidth > 768
-            ? "-translate-y-full"
+            ? "-translate-y-full shadow-sm"
             : ""
         }`}
       >
